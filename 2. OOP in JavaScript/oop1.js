@@ -49,18 +49,17 @@ class Person {
     getAge = () => {
         const diff = Date.now() - this.dob.getTime();
         const ageDate = new Date(diff);
-        return age.getUTCFullYear() - 1970;
+        return ageDate.getUTCFullYear() - 1970;
     }
     getTaxAmount = () => {
         if(this.yearlySalary > 1000000){
             return this.yearlySalary * 0.2;
         }else if(this.yearlySalary > 500000){
             return this.yearlySalary * 0.1;
+        }
     }
-
-}
 }
 
 const khan = new Person("Khan", "Niaj", "01711111111", "1999-01-01", 1000000);
 
-console.log(khan.getAge());
+console.log(khan.getTaxAmount());
