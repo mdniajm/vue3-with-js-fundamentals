@@ -17,6 +17,9 @@ class CarModel extends Car{
     printInfo = () => {
         console.log(this.getInfo() + 'and its model number is ' + this.model);
     }
+    static getFullModelName = () => {
+        return "This is a Static Method";
+    }
 }
 
 const mazda = new CarModel("Mazda", "RX-8");
@@ -26,3 +29,5 @@ const honda = new CarModel('Honda', 'Civic');
 mazda.printInfo();
 lancer.printInfo();
 honda.printInfo();
+
+console.log(CarModel.getFullModelName());
