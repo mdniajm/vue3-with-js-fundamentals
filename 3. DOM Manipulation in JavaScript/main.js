@@ -22,6 +22,10 @@ result = document.images;
 result = document.scripts;
 result = document.scripts[2].getAttribute('src');
 result = document.scripts[2].getAttribute('type');
-result = Array.from(document.scripts).map(script => script.getAttribute('src'));
+result = Array.from(document.scripts);
+
+result.forEach(element => {
+    console.log(result);
+});
 
 console.log(result);
