@@ -1,5 +1,6 @@
 /*
 document.getElementById()
+document.querySelector()
 
 */
 
@@ -22,4 +23,4 @@ document.getElementById('t-title').style.borderRadius = '5px';
 /*Changing the content */
 document.getElementById("t-title").textContent  = "Task Collection";
 document.getElementById("t-title").innerText  = "Task List";
-document.getElementById("t-title").innerHTML  = "<span style='color:green'>Task List</span>";
+document.getElementById("t-title").innerHTML  = "<span style='color:pink'>Task Collection</span>";
