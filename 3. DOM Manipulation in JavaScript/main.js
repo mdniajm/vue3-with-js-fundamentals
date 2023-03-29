@@ -27,11 +27,37 @@ document.querySelector()
 
 // /*Query Selector */
 
-let val = document.querySelector('#t-title');
-val = document.querySelectorAll('li');
+// let val = document.querySelector('#t-title');
+// val = document.querySelectorAll('li');
 
 
-document.querySelector('li:last-child').style.color = 'red';
-document.querySelector('li:nth-child(4)').style.color = 'red';
+// document.querySelector('li:last-child').style.color = 'red';
+// document.querySelector('li:nth-child(4)').style.color = 'red';
 
-console.log(val);
+// console.log(val);
+
+
+// const listItems = document.getElementsByClassName('list-group-item');
+
+// console.log(listItems);
+
+// listItems[0].style.color = 'red';
+// listItems[1].style.color = 'blue';
+
+const listItems = document.querySelector('ul').getElementsByClassName('list-group-item');
+
+console.log(listItems);
+
+const lists = document.querySelectorAll('.list-group-item');
+
+// lists[0].style.color = 'red';
+
+lists.forEach((item, index) => {
+   console.log(item.className, item, index);
+    item.style.color = 'white';
+    item.style.backgroundColor = 'green';
+    item.style.marginTop = '10px';
+    item.style.borderRadius = '5px';
+    item.textContent = `${index + 1} Niaj`;
+    
+});
