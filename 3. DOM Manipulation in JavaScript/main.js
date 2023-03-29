@@ -12,5 +12,14 @@ console.log(val.className);
 console.log(val.classList);
 
 /*Changing the styles */
-val.style.background = 'red';
+val.style.background = 'grey';
 val.style.textAlign = 'center';
+document.getElementById('t-title').style.border = '2px solid black';
+document.getElementById('t-title').style.color = 'white';
+document.getElementById('t-title').style.padding = '10px';
+document.getElementById('t-title').style.borderRadius = '5px';
+
+/*Changing the content */
+document.getElementById("t-title").textContent  = "Task Collection";
+document.getElementById("t-title").innerText  = "Task List";
+document.getElementById("t-title").innerHTML  = "<span style='color:green'>Task List</span>";
