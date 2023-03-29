@@ -58,6 +58,7 @@ lists.forEach((item, index) => {
     item.style.backgroundColor = 'green';
     item.style.marginTop = '10px';
     item.style.borderRadius = '5px';
+    item.style.padding = '20px';
     item.textContent = `${index + 1} Niaj`;
     
 });
