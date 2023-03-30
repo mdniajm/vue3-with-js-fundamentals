@@ -68,5 +68,5 @@ const list = document.querySelector('ul.list-group');
 
 const listItems = document.querySelector('li.list-group-item:first-child');
 
-result = list.children; 
+result = list.childNodes; 
 console.log(result);
