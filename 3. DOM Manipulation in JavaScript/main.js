@@ -44,21 +44,27 @@ document.querySelector()
 // listItems[0].style.color = 'red';
 // listItems[1].style.color = 'blue';
 
-const listItems = document.querySelector('ul').getElementsByClassName('list-group-item');
+// const listItems = document.querySelector('ul').getElementsByClassName('list-group-item');
 
-console.log(listItems);
+// console.log(listItems);
 
-const lists = document.querySelectorAll('.list-group-item');
+// const lists = document.querySelectorAll('.list-group-item');
 
-// lists[0].style.color = 'red';
+// // lists[0].style.color = 'red';
 
-lists.forEach((item, index) => {
-   console.log(item.className, item, index);
-    item.style.color = 'white';
-    item.style.backgroundColor = 'green';
-    item.style.marginTop = '10px';
-    item.style.borderRadius = '5px';
-    item.style.padding = '20px';
-    item.textContent = `${index + 1} Niaj`;
+// lists.forEach((item, index) => {
+//    console.log(item.className, item, index);
+//     item.style.color = 'white';
+//     item.style.backgroundColor = 'green';
+//     item.style.marginTop = '10px';
+//     item.style.borderRadius = '5px';
+//     item.style.padding = '20px';
+//     item.textContent = `${index + 1} Niaj`;
     
-});
+// });
+
+let result;
+const list = document.querySelector('ul.list-group');
+
+result = list; 
+console.log(result);
