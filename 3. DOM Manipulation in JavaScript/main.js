@@ -66,5 +66,7 @@ document.querySelector()
 let result;
 const list = document.querySelector('ul.list-group');
 
-result = list; 
+const listItems = document.querySelector('li.list-group-item:first-child');
+
+result = list.children; 
 console.log(result);
