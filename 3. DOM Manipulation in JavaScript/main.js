@@ -66,7 +66,17 @@ document.querySelector()
 let result;
 const list = document.querySelector('ul.list-group');
 
-const listItems = document.querySelector('li.list-group-item:first-child');
+// const listItems = document.querySelector('li.list-group-item:first-child');
 
 result = list.childNodes; 
+
+/*
+1 - element
+2 - attribute (dep)
+3 - text node
+8 - comment
+9 - document itself
+10 - Doctype
+
+*/
 console.log(result);
