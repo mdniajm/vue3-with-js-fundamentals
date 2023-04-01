@@ -86,3 +86,6 @@ console.log(result);
 
 result = list.children[0];
 console.log(result);
+
+result = list.children[1].textContent = 'Hello';
+console.log(result);
