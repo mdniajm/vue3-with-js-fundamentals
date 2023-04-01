@@ -92,3 +92,6 @@ console.log(result);
 
 result = list.children[2].children;
 console.log(result);
+
+result = list.children[2].children[0].id = 'test-link';
+console.log(result);
