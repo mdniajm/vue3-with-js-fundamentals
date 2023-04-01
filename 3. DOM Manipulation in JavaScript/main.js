@@ -83,3 +83,6 @@ console.log(result);
 
 result = list.children;
 console.log(result);
+
+result = list.children[0];
+console.log(result);
