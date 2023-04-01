@@ -80,3 +80,6 @@ result = list.childNodes;
 
 */
 console.log(result);
+
+result = list.children;
+console.log(result);
