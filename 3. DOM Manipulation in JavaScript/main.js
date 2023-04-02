@@ -63,12 +63,12 @@ document.querySelector()
     
 // });
 
-let result;
-const list = document.querySelector('ul.list-group');
+// let result;
+// const list = document.querySelector('ul.list-group');
 
 // const listItems = document.querySelector('li.list-group-item:first-child');
 
-result = list.childNodes; 
+// result = list.childNodes; 
 
 /*
 1 - element
@@ -79,19 +79,46 @@ result = list.childNodes;
 10 - Doctype
 
 */
-console.log(result);
+// console.log(result);
 
-result = list.children;
-console.log(result);
+// result = list.children;
+// console.log(result);
 
-result = list.children[0];
-console.log(result);
+// result = list.children[0];
+// console.log(result);
 
-result = list.children[1].textContent = 'Hello';
-console.log(result);
+// result = list.children[1].textContent = 'Hello';
+// console.log(result);
 
-result = list.children[2].children;
-console.log(result);
+// result = list.children[2].children;
+// console.log(result);
 
-result = list.children[2].children[0].id = 'test-link';
-console.log(result);
+// result = list.children[2].children[0].id = 'test-link';
+// console.log(result);
+
+
+/* Create Element */
+
+const listItem = document.createElement('li');
+ /*Add Class Name */
+listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+
+/*add id */
+
+listItem.id = 'new-item';
+
+/*add attribute */
+
+listItem.setAttribute('title', 'New Task Item');
+
+console.log(listItem);
+
+/*Create Text Node and append*/
+listItem.appendChild(document.createTextNode('New Task Item'));
+
+console.log(listItem);
+
+document.querySelector('ul.list-group').appendChild(listItem);
+
+
+
