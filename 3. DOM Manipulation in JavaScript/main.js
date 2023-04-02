@@ -154,9 +154,13 @@ oldElementParent.replaceChild(newTitle, oldElement);
 const list = document.querySelector('ul');
 const listItems = document.querySelectorAll('li');	
 
-listItems[0].remove();
+//listItems[0].remove();
 
-list.removeChild(0);
+list.removeChild(listItems[3]);
+
+/*Classes and Attributes */
+
+listItems[1].classList.add('bg-success');
 
 
 
