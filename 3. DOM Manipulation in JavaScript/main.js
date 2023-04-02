@@ -132,7 +132,7 @@ document.querySelector()
 /*Create New element */
 const newTitle = document.createElement('h2');
 newTitle.id = 'task-title';
-newTitle.className = 'card-title';
+newTitle.className = 'card-title text-center';
 newTitle.appendChild(document.createTextNode('Task Collection'));
 
 console.log(newTitle);
@@ -148,6 +148,16 @@ console.log(oldElementParent);
 
 /*Replace */
 oldElementParent.replaceChild(newTitle, oldElement);
+
+/*Remove Element */
+
+const list = document.querySelector('ul');
+const listItems = document.querySelectorAll('li');	
+
+listItems[0].remove();
+
+list.removeChild(0);
+
 
 
 
