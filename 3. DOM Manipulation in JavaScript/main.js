@@ -97,35 +97,57 @@ document.querySelector()
 // console.log(result);
 
 
-/* Create Element */
+// /* Create Element */
 
-const listItem = document.createElement('li');
- /*Add Class Name */
-listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+// const listItem = document.createElement('li');
+//  /*Add Class Name */
+// listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
 
-/*add id */
+// /*add id */
 
-listItem.id = 'new-item';
+// listItem.id = 'new-item';
 
-/*add attribute */
+// /*add attribute */
 
-listItem.setAttribute('title', 'New Task Item');
+// listItem.setAttribute('title', 'New Task Item');
 
-console.log(listItem);
+// console.log(listItem);
 
-/*Create Text Node and append*/
-listItem.appendChild(document.createTextNode('New Task Item'));
+// /*Create Text Node and append*/
+// listItem.appendChild(document.createTextNode('New Task Item'));
 
-console.log(listItem);
+// console.log(listItem);
 
-document.querySelector('ul.list-group').appendChild(listItem);
+// document.querySelector('ul.list-group').appendChild(listItem);
 
-/*Link element */
-const link = document.createElement('a');
-link.className = 'delete-item secondary-content';
-link.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+// /*Link element */
+// const link = document.createElement('a');
+// link.className = 'delete-item secondary-content';
+// link.innerHTML = '<i class="fa-solid fa-xmark"></i>';
 
-listItem.appendChild(link);
+// listItem.appendChild(link);
+
+/*Replace Element */
+
+/*Create New element */
+const newTitle = document.createElement('h2');
+newTitle.id = 'task-title';
+newTitle.className = 'card-title';
+newTitle.appendChild(document.createTextNode('Task Collection'));
+
+console.log(newTitle);
+
+/*Get the previous element */
+
+const oldElement = document.querySelector('.card-title');
+console.log(oldElement);
+
+const oldElementParent = oldElement.parentElement;
+
+console.log(oldElementParent);
+
+/*Replace */
+oldElementParent.replaceChild(newTitle, oldElement);
 
 
 
