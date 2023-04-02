@@ -120,5 +120,12 @@ console.log(listItem);
 
 document.querySelector('ul.list-group').appendChild(listItem);
 
+/*Link element */
+const link = document.createElement('a');
+link.className = 'delete-item secondary-content';
+link.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+
+listItem.appendChild(link);
+
 
 
