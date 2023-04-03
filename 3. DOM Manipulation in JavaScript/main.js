@@ -19,9 +19,15 @@ const btn = document.querySelector('#addButton');
 
 const title = document.querySelector('#t-title');
 
-btn.addEventListener('mousemove', (event) => {
+// btn.addEventListener('mousemove', (event) => {
+//     title.textContent = `MouseX: ${event.offsetX} MouseY: ${event.offsetY}`;
+//     document.body.style.backgroundColor = `rgb(${event.offsetX}, ${event.offsetY}, 40)`;
+
+// });
+
+btn.addEventListener('click', (event) => {
     title.textContent = `MouseX: ${event.offsetX} MouseY: ${event.offsetY}`;
     document.body.style.backgroundColor = `rgb(${event.offsetX}, ${event.offsetY}, 40)`;
-    
+
 });
 
