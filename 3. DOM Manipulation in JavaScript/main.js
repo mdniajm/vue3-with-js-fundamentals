@@ -20,7 +20,8 @@ const btn = document.querySelector('#addButton');
 const title = document.querySelector('#t-title');
 
 btn.addEventListener('mousemove', (event) => {
-    title.textContent = 'Changed Title';
-    title.style.color = 'red';
+    title.textContent = `MouseX: ${event.offsetX} MouseY: ${event.offsetY}`;
+    document.body.style.backgroundColor = `rgb(${event.offsetX}, ${event.offsetY}, 40)`;
+    
 });
 
