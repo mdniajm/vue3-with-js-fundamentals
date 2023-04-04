@@ -12,8 +12,13 @@ function loadData(){
     xhr.open('GET', 'data.txt', true);
     
     /*Runs when data load */
-    xhr.onload = function(){
-        if(this.status === 200){
+    // xhr.onload = function(){
+    //     if(this.status === 200){
+    //         console.log(this.responseText);
+    //     }
+    // }
+    xhr.onreadystatechange = function(){
+        if(this.status === 200 && this.readyState === 4){
             console.log(this.responseText);
         }
     }
