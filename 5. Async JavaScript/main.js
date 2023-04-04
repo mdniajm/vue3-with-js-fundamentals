@@ -18,6 +18,15 @@ function loadData(){
         if(this.status === 200){
             const post = JSON.parse(this.responseText);
             console.log(post);
+            const output = `
+            <ul>
+                <li>ID: ${post.id}</li>
+
+            
+            </ul>
+            
+            `;
+            document.getElementById('post').innerHTML = output;
         }
     }
     
