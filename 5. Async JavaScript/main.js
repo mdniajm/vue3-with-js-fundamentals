@@ -7,28 +7,19 @@ btn.addEventListener('click', loadData);
 function loadData(){
     /*Create XHR object */
     const xhr = new XMLHttpRequest();
+
     
     /*Panel setup or open port */
-    xhr.open('GET', 'data.txt', true);
+    xhr.open('GET', 'post.json', true);
     
     /*Runs when data load */
-    xhr.onprogress = function(){
-        console.log('READYSTATE', xhr.readyState);
-    }
-
 
     xhr.onload = function(){
-        console.log('READYSTATE', xhr.readyState);
         if(this.status === 200){
-            console.log(this.responseText);
+            const post = JSON.parse(this.responseText);
+            console.log(post);
         }
     }
-    // xhr.onreadystatechange = function(){
-    //     if(this.status === 200 && this.readyState === 4){
-    //         console.log(this.responseText);
-    //     }
-    // }
-
-    /*Send request */
+    
     xhr.send();
 }
