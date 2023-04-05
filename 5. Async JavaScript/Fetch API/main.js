@@ -39,3 +39,24 @@ btnJSON.addEventListener('click', () => {
      })
 })
 
+btnAPI.addEventListener('click', () =>{
+    fetch ('https://jsonplaceholder.typicode.com/todos')
+    .then((res) => {
+        return res.json();
+    })
+    .then ((data) => {
+        console.log(data);
+        let output = '';
+        data.forEach(post =>{
+            output += `
+            <li> ${post.title} </li>
+
+            `
+        })
+        post.innerHTML = output;
+    })
+});
+
+
+
+
