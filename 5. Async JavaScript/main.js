@@ -10,7 +10,7 @@ function loadData(){
 
     
     /*Panel setup or open port */
-    xhr.open('GET', 'post.json', true);
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
     
     /*Runs when data load */
 
@@ -18,17 +18,19 @@ function loadData(){
         if(this.status === 200){
             const post = JSON.parse(this.responseText);
             console.log(post);
-            const output = `
-            <ul>
-                <li>ID: ${post.id}</li>
-
-            
-            </ul>
-            
-            `;
+            let output = '';
+            post.forEach(function(post){
+                output += `
+                <ul>
+                    <li>${post.title}</li>
+                    <li>${post.body}</li>
+                </ul>
+                `;
+            });
             document.getElementById('post').innerHTML = output;
-        }
     }
+}
     
     xhr.send();
 }
+
