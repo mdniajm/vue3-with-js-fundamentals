@@ -18,4 +18,24 @@ btnText.addEventListener('click', () =>{
 });
 
 
+btnJSON.addEventListener('click', () => {
+     fetch('posts.json')
+     .then((res) => {
+        return res.json();
+     })
+     .then ((data) => {
+        console.log(data);
+        let output = '';
+        data.forEach(post =>{
+            output += `
+            <li> ${post.title} </li>
+
+            `
+        })
+        post.innerHTML = output;
+     })
+     .catch ((err) => {
+        console.log(err);
+     })
+})
 
