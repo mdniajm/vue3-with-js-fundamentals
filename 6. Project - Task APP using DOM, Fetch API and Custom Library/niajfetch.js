@@ -12,13 +12,13 @@ class niajHTTP{
 
 
     /* POST REQUEST */
-    async post (url_link, data){
+    async post (url_link, payload){
         const res = await fetch(url_link, {
             method: 'POST',
             headers: {
                 'Content-type' : 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(payload)
         })
 
         const resData = await res.json();
