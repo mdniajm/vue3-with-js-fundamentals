@@ -2,7 +2,7 @@ const dataFetch = new niajHTTP;
 const listGroup = document.getElementById('list-group');
 
 /* Get Todo's */
-const getUser = () => {
+const getTodos = () => {
     dataFetch.get('https://jsonplaceholder.typicode.com/todos')
     .then((data) => {        
         console.log(data);
@@ -32,4 +32,4 @@ const getUser = () => {
     .catch(err => console.log(err));
 }
 
-getUser();
+getTodos();
