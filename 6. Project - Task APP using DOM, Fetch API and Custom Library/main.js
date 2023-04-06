@@ -1,33 +1,35 @@
-/*Event Listener */
-const btn = document.querySelector('#addButton');
+const dataFetch = new niajHTTP;
+const listGroup = document.getElementById('list-group');
 
-//console.log(btn);
-
-// btn.addEventListener('click', (event) => {
-//     console.log(
-//         event.target.id, 
-//         event.target.className, 
-//         event.target.classList, 
-//         event.type,
-//         event.timeStamp,
-//         event.clientX, event.clientY,
-//         event.offsetX, event.offsetY
+/* Get Todo's */
+const getUser = () => {
+    dataFetch.get('https://jsonplaceholder.typicode.com/todos')
+    .then((data) => {        
+        console.log(data);
+        let output= '';
+        data.forEach(todo => {
+            output += `
         
-//         );
-//     event.preventDefault();
-// });
+            <li class="list-group-item d-flex justify-content-between align-items-center text-light bg-info m-2 p-2">
+                ${todo.title}
+                <a href="#" class="delete-item secondary-content">
+                  <i class="fa-solid fa-xmark"></i>
+                </a>
+              </li> 
+              
+            
+            
+            `;
+            listGroup.innerHTML = output;
+        })
 
-const title = document.querySelector('#t-title');
+    
+    
+    
+    })
 
-// btn.addEventListener('mousemove', (event) => {
-//     title.textContent = `MouseX: ${event.offsetX} MouseY: ${event.offsetY}`;
-//     document.body.style.backgroundColor = `rgb(${event.offsetX}, ${event.offsetY}, 40)`;
 
-// });
+    .catch(err => console.log(err));
+}
 
-btn.addEventListener('click', (event) => {
-    title.textContent = `MouseX: ${event.offsetX} MouseY: ${event.offsetY}`;
-    document.body.style.backgroundColor = `rgb(${event.offsetX}, ${event.offsetY}, 40)`;
-
-});
-
+getUser();
