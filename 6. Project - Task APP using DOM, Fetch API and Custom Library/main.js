@@ -41,4 +41,10 @@ const postTodo = () => {
     .catch(err => console.log(err));
 } 
 
+/* Put Todo's */
+const putTodo = () => {
+    dataFetch.put('https://jsonplaceholder.typicode.com/todos/1', {title: 'This is a new Todo', completed: false})
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+}
 
