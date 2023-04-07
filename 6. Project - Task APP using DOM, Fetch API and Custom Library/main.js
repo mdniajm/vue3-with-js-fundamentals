@@ -33,3 +33,12 @@ const getTodos = () => {
 }
 
 getTodos();
+
+/* Post Todo's */
+const postTodo = () => {
+    dataFetch.post('https://jsonplaceholder.typicode.com/todos', {title: 'This is a new Todo', completed: false})
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+} 
+
+
