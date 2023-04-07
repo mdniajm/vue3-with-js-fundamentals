@@ -37,7 +37,16 @@ class niajHTTP{
             },
             body: JSON.stringify(payload)
         })  
-        
-    /* DELETE REQUEST */
-}
+    }
 
+    /* DELETE REQUEST */
+    async delete (url_link){
+        const res = await fetch(url_link, {
+            method: 'DELETE',
+            headers: {
+                'Content-type' : 'application/json'
+            }
+        })  
+    }
+
+}
