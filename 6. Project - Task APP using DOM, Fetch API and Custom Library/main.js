@@ -48,3 +48,10 @@ const putTodo = () => {
     .catch(err => console.log(err));
 }
 
+/* Delete Todo's */
+const deleteTodo = () => {
+    dataFetch.delete('https://jsonplaceholder.typicode.com/todos/1')
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+}
+
