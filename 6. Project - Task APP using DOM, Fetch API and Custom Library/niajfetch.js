@@ -29,6 +29,15 @@ class niajHTTP{
 
 
     /* PUT REQUEST */
+    async put (url_link, payload){
+        const res = await fetch(url_link, { 
+            method: 'PUT',
+            headers: {
+                'Content-type' : 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })  
+        
     /* DELETE REQUEST */
 }
 
