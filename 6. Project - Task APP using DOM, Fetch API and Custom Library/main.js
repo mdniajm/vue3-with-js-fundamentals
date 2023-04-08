@@ -57,5 +57,6 @@ const deleteTodo = () => {
 
 /* Event Listeners */
 document.getElementById('get-todos').addEventListener('click', getTodos);
+document.getElementById('post-todo').addEventListener('click', postTodo);
 
 
