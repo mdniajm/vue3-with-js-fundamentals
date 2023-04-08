@@ -55,3 +55,7 @@ const deleteTodo = () => {
     .catch(err => console.log(err));
 }
 
+/* Event Listeners */
+document.getElementById('get-todos').addEventListener('click', getTodos);
+
+
