@@ -1,6 +1,8 @@
 const dataFetch = new niajHTTP;
 const listGroup = document.getElementById('list-group');
 const addTodo = document.getElementById('addButton');
+const taskItem = document.getElementById('task');
+
 /* Get Todo's */
 const getTodos = () => {
     dataFetch.get('https://jsonplaceholder.typicode.com/todos')
@@ -35,10 +37,12 @@ const getTodos = () => {
 /*Create Todo's */
 const createTodos = () =>{
 
+    console.log(taskItem.value);
+
     const formData = {
         'userId': 1,
-        'title': 'I have to complete JS before vue js learning',
-        'completed': false
+        'title': taskItem.value,
+        'completed': true
     };
 
     dataFetch.post('https://jsonplaceholder.typicode.com/todos', formData)
@@ -49,7 +53,9 @@ const createTodos = () =>{
         console.log(err);
     })
 
-    getTodos();
+    setTimeout (() => {
+        getTodos();
+    }, 2000)
 
 }
 
@@ -58,6 +64,7 @@ const createTodos = () =>{
 getTodos();
 
 addTodo.addEventListener('click', createTodos);
+
 
 
 
