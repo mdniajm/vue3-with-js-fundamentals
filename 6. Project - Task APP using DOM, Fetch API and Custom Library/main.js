@@ -1,6 +1,6 @@
 const dataFetch = new niajHTTP;
 const listGroup = document.getElementById('list-group');
-
+const addTodo = document.getElementById('addButton');
 /* Get Todo's */
 const getTodos = () => {
     dataFetch.get('https://jsonplaceholder.typicode.com/todos')
@@ -32,33 +32,69 @@ const getTodos = () => {
     .catch(err => console.log(err));
 }
 
+/*Create Todo's */
+const createTodos = () =>{
+
+    const formData = {
+        'userId': 1,
+        'title': 'I have to complete JS before vue js learning',
+        'completed': false
+    };
+
+    dataFetch.post('https://jsonplaceholder.typicode.com/todos', formData)
+    .then((data) =>{
+        console.log(data);
+    })
+    .catch((err) =>{
+        console.log(err);
+    })
+
+    getTodos();
+
+}
+
+
+
 getTodos();
 
-/* Post Todo's */
-const postTodo = () => {
-    dataFetch.post('https://jsonplaceholder.typicode.com/todos', {title: 'This is a new Todo', completed: false})
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
-} 
+addTodo.addEventListener('click', createTodos);
 
-/* Put Todo's */
-const putTodo = () => {
-    dataFetch.put('https://jsonplaceholder.typicode.com/todos/1', {title: 'This is a new Todo', completed: false})
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
-}
 
-/* Delete Todo's */
-const deleteTodo = () => {
-    dataFetch.delete('https://jsonplaceholder.typicode.com/todos/1')
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
-}
 
-/* Event Listeners */
-document.getElementById('get-todos').addEventListener('click', getTodos);
-document.getElementById('post-todo').addEventListener('click', postTodo);
-document.getElementById('put-todo').addEventListener('click', putTodo);
-document.getElementById('delete-todo').addEventListener('click', deleteTodo);
+
+
+
+
+
+
+
+
+// /* Post Todo's */
+// const postTodo = () => {
+//     dataFetch.post('https://jsonplaceholder.typicode.com/todos', {title: 'This is a new Todo', completed: false})
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err));
+// } 
+
+// /* Put Todo's */
+// const putTodo = () => {
+//     dataFetch.put('https://jsonplaceholder.typicode.com/todos/1', {title: 'This is a new Todo', completed: false})
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err));
+// }
+
+// /* Delete Todo's */
+// const deleteTodo = () => {
+//     dataFetch.delete('https://jsonplaceholder.typicode.com/todos/1')
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err));
+// }
+
+// /* Event Listeners */
+// document.getElementById('get-todos').addEventListener('click', getTodos);
+// document.getElementById('post-todo').addEventListener('click', postTodo);
+// document.getElementById('put-todo').addEventListener('click', putTodo);
+// document.getElementById('delete-todo').addEventListener('click', deleteTodo);
+
 
 

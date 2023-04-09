@@ -26,27 +26,27 @@ class niajHTTP{
     }
 
 
-
-
-    /* PUT REQUEST */
-    async put (url_link, payload){
-        const res = await fetch(url_link, { 
-            method: 'PUT',
-            headers: {
-                'Content-type' : 'application/json'
-            },
-            body: JSON.stringify(payload)
-        })  
-    }
-
-    /* DELETE REQUEST */
-    async delete (url_link){
-        const res = await fetch(url_link, {
-            method: 'DELETE',
-            headers: {
-                'Content-type' : 'application/json'
-            }
-        })  
-    }
-
 }
+
+//     /* PUT REQUEST */
+//     async put (url_link, payload){
+//         const res = await fetch(url_link, { 
+//             method: 'PUT',
+//             headers: {
+//                 'Content-type' : 'application/json'
+//             },
+//             body: JSON.stringify(payload)
+//         })  
+//     }
+
+//     /* DELETE REQUEST */
+//     async delete (url_link){
+//         const res = await fetch(url_link, {
+//             method: 'DELETE',
+//             headers: {
+//                 'Content-type' : 'application/json'
+//             }
+//         })  
+//     }
+
+// }
