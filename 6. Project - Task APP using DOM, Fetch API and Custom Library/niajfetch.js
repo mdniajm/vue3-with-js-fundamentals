@@ -26,9 +26,21 @@ class niajHTTP{
     }
 
 
+
+
+/* PUT REQUEST */
+async update (url_link, payload){
+    const res = await fetch(url_link, {
+        method: 'PUT',
+        headers: {
+            'Content-type' : 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    const resData = await res.json();
+    return resData;
 }
 
-//     /* PUT REQUEST */
 //     async put (url_link, payload){
 //         const res = await fetch(url_link, { 
 //             method: 'PUT',
@@ -39,14 +51,17 @@ class niajHTTP{
 //         })  
 //     }
 
-//     /* DELETE REQUEST */
-//     async delete (url_link){
-//         const res = await fetch(url_link, {
-//             method: 'DELETE',
-//             headers: {
-//                 'Content-type' : 'application/json'
-//             }
-//         })  
-//     }
+ /* DELETE REQUEST */
 
-// }
+ async delete (url_link){
+    const res = await fetch(url_link, {
+        method: 'DELETE',
+        headers: {
+            'Content-type' : 'application/json'
+        }
+    })
+    const resData = await 'Resource Deleted';
+    return resData;
+}
+
+}

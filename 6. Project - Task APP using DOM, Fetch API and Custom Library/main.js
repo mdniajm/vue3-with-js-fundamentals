@@ -69,7 +69,27 @@ addTodo.addEventListener('click', createTodos);
 
 
 
+/*Update todo */
+const updateTodo = (id) =>{
+    dataFetch.update('https://jsonplaceholder.typicode.com/todos/'`${id}`, payload)
+    .then((data) =>{
+        console.log(data);
+    })
+    .catch((err) =>{
+        console.log(err);
+    })
+}
 
+/*Delete todo */
+const deleteTodo = (id) =>{ 
+    dataFetch.delete('https://jsonplaceholder.typicode.com/todos/'`${id}`)
+    .then((data) =>{
+        console.log(data);
+    })
+    .catch((err) =>{
+        console.log(err);
+    })
+}
 
 
 
