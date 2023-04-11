@@ -9,8 +9,7 @@
 </template>
 
 
-
-
+// options api
 <script>
 export default{
   data(){
@@ -21,4 +20,11 @@ export default{
     }
   }
 }
+</script>
+
+// composition api
+<script>
+import { ref } from 'vue'
+
+
 </script>
