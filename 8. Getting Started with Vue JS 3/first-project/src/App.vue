@@ -59,3 +59,33 @@ Path: first-project\src\App.vue
       </li>
     </ul>
   </div>
+
+</template>
+
+<script>  
+import { ref } from 'vue'
+
+export default{
+  setup(){
+    const todo = ref('')
+    const todos = ref([])
+
+    const addTodo = () => {
+      todos.value.push(todo.value)
+      todo.value = ''
+    }
+
+    const removeTodo = (index) => {
+      todos.value.splice(index, 1)
+    }
+
+    return{
+      todo,
+      todos,
+      addTodo,
+      removeTodo
+    }
+  }
+}
+
+</script>
