@@ -41,3 +41,21 @@ export default{
 }
 
 </script>
+
+/* todo list using composition api */
+
+Path: first-project\src\App.vue
+
+<template>
+  <div>
+    <h1>Todo List</h1>
+    <input type="text" v-model="todo" placeholder="Enter Todo">
+    <button @click="addTodo">Add Todo</button>
+
+    <ul>
+      <li v-for="(todo, index) in todos" :key="index">
+        {{ todo }}
+        <button @click="removeTodo(index)">Remove</button>
+      </li>
+    </ul>
+  </div>
