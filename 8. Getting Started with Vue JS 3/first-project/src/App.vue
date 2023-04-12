@@ -10,9 +10,17 @@
 
 
 
-<script setup>
+<script>
   import { ref } from 'vue';
-  let count = ref(0);
-  const courseName = ref('Vue JS 3 MasterClass') ;
-  const mentor = ref('Md Niaj Makdhum');
+  export default {
+    setup(){
+      let count = ref(0);
+      const courseName = ref('Vue JS 3 MasterClass') ;
+      const mentor = ref('Md Niaj Makdhum');
+
+      return { count, courseName, mentor }
+
+    }
+  }
+  
 </script>
