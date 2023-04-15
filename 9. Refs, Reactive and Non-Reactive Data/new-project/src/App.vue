@@ -51,3 +51,4 @@
       return { count, courseName, mentor };
     },
   };
+</script>
