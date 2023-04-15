@@ -52,3 +52,12 @@
     },
   };
 </script>
+
+<template>
+  <h1>{{ courseName }}</h1>
+  <p>Course By {{ mentor }}</p>
+
+  <button @click="count++"> + </button>
+  <h3>{{ count }}</h3>
+  <button @click="count--"> - </button>
+</template>
