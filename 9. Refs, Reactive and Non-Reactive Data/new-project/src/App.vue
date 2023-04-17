@@ -252,3 +252,36 @@ class CalculatorParser {
     <button @click="addTodo">Add Todo</button>
   </div>
 </template>
+
+<script>
+
+export default {
+  name: 'TodoList',
+  data() {
+    return {
+      todos: [
+        {
+          text: 'Buy milk',
+          completed: false,
+        },
+        {
+          text: 'Wash the car',
+          completed: false,
+        },
+      ],
+      newTodoText: '',
+    };
+  },
+  methods: {
+    addTodo() {
+      this.todos.push({
+        text: this.newTodoText,
+        completed: false,
+      });
+      this.newTodoText = '';
+    },
+    deleteTodo(todo) {
+      this.todos.splice(this.todos.indexOf(todo), 1);
+    },
+  },
+};
