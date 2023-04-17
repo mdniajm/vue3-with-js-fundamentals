@@ -285,3 +285,24 @@ export default {
     },
   },
 };
+
+</script>
+
+<style>
+.todo-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-list li {
+  margin-bottom: 10px;
+}
+
+.todo-list li input {
+  margin-right: 5px;
+}
+
+.todo-list li button {
+  margin-left: 5px;
+}
