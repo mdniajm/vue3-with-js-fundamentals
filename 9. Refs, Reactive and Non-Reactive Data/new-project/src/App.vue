@@ -237,3 +237,18 @@ class CalculatorParser {
   font-size: 2em;
 }
 </style>
+
+<template>
+  <div class="todo-list">
+    <h1>Todo List</h1>
+    <ul>
+      <li v-for="todo in todos">
+        <input type="checkbox" v-model="todo.completed" />
+        <span>{{ todo.text }}</span>
+        <button @click="deleteTodo(todo)">Delete</button>
+      </li>
+    </ul>
+    <input type="text" v-model="newTodoText" placeholder="Add a new todo" />
+    <button @click="addTodo">Add Todo</button>
+  </div>
+</template>
