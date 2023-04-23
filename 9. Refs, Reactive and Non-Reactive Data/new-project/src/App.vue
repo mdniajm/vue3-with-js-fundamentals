@@ -32,6 +32,15 @@
 
 </style>
 
+<script>
+//todo list
+// 1. ref
+// 2. reactive
+
+
+
+</script>
+
 
 
 
