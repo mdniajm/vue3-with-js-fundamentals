@@ -73,6 +73,30 @@ import { ref, watch } from 'vue';
 
     }
   }
+
+
+</script>
+
+<script>
+
+// 5. watchEffect
+
+import { ref, watchEffect } from 'vue';
+  export default {
+    setup(){
+      let count = ref(0);
+      const courseName = ref('Vue JS 3 MasterClass') ;
+      const mentor = ref('Md Niaj Makdhum');
+
+      watchEffect(() => {
+        console.log(count.value);
+      })
+
+      return { count, courseName, mentor }
+
+    }
+  }
+
 </script>
 
 
