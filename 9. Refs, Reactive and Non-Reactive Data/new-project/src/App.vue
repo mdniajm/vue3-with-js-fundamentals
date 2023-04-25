@@ -54,9 +54,28 @@
 
 </script>
 
-<script
+<script>
 
-path: new-project\src\App.vue
+// 4. watch
+
+import { ref, watch } from 'vue';
+  export default {
+    setup(){
+      let count = ref(0);
+      const courseName = ref('Vue JS 3 MasterClass') ;
+      const mentor = ref('Md Niaj Makdhum');
+
+      watch(count, (newValue, oldValue) => {
+        console.log(newValue, oldValue);
+      })
+
+      return { count, courseName, mentor }
+
+    }
+  }
+</script>
+
+
 
 <template>
   <h1>{{ courseName }}</h1>
@@ -67,6 +86,7 @@ path: new-project\src\App.vue
   <button @click="count--"> - </button>
 
 </template>
+
 
 
 
