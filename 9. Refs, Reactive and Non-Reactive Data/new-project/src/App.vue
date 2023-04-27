@@ -1,6 +1,6 @@
 <template>
-  <h1>{{ courseName }}</h1>
-  <p>Course By {{mentor}}</p>
+  <h1>{{ course.courseName }}</h1>
+  <p>Course By {{course.mentor}}</p>
 
   <button @click="count++"> + </button>
   <h3>{{ count }}</h3>
@@ -10,107 +10,13 @@
 
 
 
-<script>
-  import { ref } from 'vue';
-  export default {
-    setup(){
-      let count = ref(0);
-      const courseName = ref('Vue JS 3 MasterClass') ;
-      const mentor = ref('Md Niaj Makdhum');
-
-      return { count, courseName, mentor }
-
-    }
-  }
+<script setup>
+  import { ref, reactive } from 'vue';
+  let count = ref(0);
+  let course = reactive({
+    courseName: 'Vue 3',
+    mentor: 'Md Niaj Makhdum'
+  })
   
 </script>
-
-<style scoped>
-  h1{
-    color: red;
-  }
-
-</style>
-
-<script>
-//todo list
-// 1. ref
-// 2. reactive
-
-// 3. computed
- 
- import { ref } from 'vue';
-  export default {
-    setup(){
-      let count = ref(0);
-      const courseName = ref('Vue JS 3 MasterClass') ;
-      const mentor = ref('Md Niaj Makdhum');
-
-      return { count, courseName, mentor }
-
-    }
-  }
-
-
-</script>
-
-<script>
-
-// 4. watch
-
-import { ref, watch } from 'vue';
-  export default {
-    setup(){
-      let count = ref(0);
-      const courseName = ref('Vue JS 3 MasterClass') ;
-      const mentor = ref('Md Niaj Makdhum');
-
-      watch(count, (newValue, oldValue) => {
-        console.log(newValue, oldValue);
-      })
-
-      return { count, courseName, mentor }
-
-    }
-  }
-
-
-</script>
-
-<script>
-
-// 5. watchEffect
-
-import { ref, watchEffect } from 'vue';
-  export default {
-    setup(){
-      let count = ref(0);
-      const courseName = ref('Vue JS 3 MasterClass') ;
-      const mentor = ref('Md Niaj Makdhum');
-
-      watchEffect(() => {
-        console.log(count.value);
-      })
-
-      return { count, courseName, mentor }
-
-    }
-  }
-
-</script>
-
-
-
-<template>
-  <h1>{{ courseName }}</h1>
-  <p>Course By {{mentor}}</p>
-
-  <button @click="count++"> + </button>
-  <h3>{{ count }}</h3>
-  <button @click="count--"> - </button>
-
-</template>
-
-
-
 
