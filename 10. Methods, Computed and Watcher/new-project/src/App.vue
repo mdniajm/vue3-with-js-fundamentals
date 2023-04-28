@@ -19,7 +19,7 @@
     mentor: 'Md Niaj Makhdum'
   })
   
-  function increment(amount){
+  const increment = (amount) => {
     count.value += amount;
   }
 
