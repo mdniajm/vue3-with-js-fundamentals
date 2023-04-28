@@ -2,8 +2,8 @@
   <h1>{{ staticString }}</h1>
   <h1>{{ course.courseName }}</h1>
   <p @click="mentorName">Course By {{ mentorFullName }}</p>
-  <button @click="increment(2)"> + </button>
-  <h3>{{ count }}</h3>
+  <button @click="increment(1)"> + </button>
+  <h3>{{ count }} - {{ checkEvenOdd }}</h3>
   <button @click="decrement(1)"> - </button>
 
 </template>
@@ -26,7 +26,12 @@
 
   const mentorFullName = computed(() => {
     return course.mentorFirstName + ' ' + course.mentorLastName;
-  })
+  });
+
+  const checkEvenOdd = computed(() => {
+    if(count.value % 2 == 0) return 'Odd';
+    return 'Even';
+  });
   
 
 
