@@ -1,7 +1,7 @@
 <template>
   <h1>{{ staticString }}</h1>
   <h1>{{ course.courseName }}</h1>
-  <p>Course By {{course.mentor}}</p>
+  <p @click="mentorName">Course By {{course.mentor}}</p>
   <button @click="increment(2)"> + </button>
   <h3>{{ count }}</h3>
   <button @click="decrement(1)"> - </button>
@@ -19,13 +19,10 @@
     mentor: 'Md Niaj Makhdum'
   })
   
-  const increment = (amount) => {
-    count.value += amount;
-  }
-
-  function decrement(amount){
-    count.value -= amount;
-  }
+  const increment = amount => count.value += amount;
+  const decrement = amount => count.value -= amount;
+  const mentorName = () => course.mentor = "Md. Niaj Makhdum";
+  
 
 
 
