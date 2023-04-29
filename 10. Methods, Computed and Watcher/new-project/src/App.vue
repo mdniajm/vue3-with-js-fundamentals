@@ -11,7 +11,7 @@
 
 
 <script setup>
-  import { ref, reactive, computed } from 'vue';
+  import { ref, reactive, computed, watch } from 'vue';
   let count = ref(0);
   const staticString = 'New Vue JS 3 Course- Method/Function Based Component';
   let course = reactive({
@@ -31,6 +31,12 @@
   const checkEvenOdd = computed(() => {
 
     return count.value % 2 === 0 ? 'Even': 'Odd';
+  });
+
+  /* Watch event  */
+
+  watch(count, (newValue, oldValue) => {
+    console.log('New Value: ', newValue, 'Old Value: ', oldValue);
   });
   
 
