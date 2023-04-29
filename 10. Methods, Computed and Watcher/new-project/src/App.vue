@@ -37,6 +37,7 @@
 
   watch(count, (newValue, oldValue) => {
     console.log('New Value: ', newValue, 'Old Value: ', oldValue);
+    alert('New Value: ' + newValue + 'Old Value: ' + oldValue);
   });
   
 
