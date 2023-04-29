@@ -29,8 +29,8 @@
   });
 
   const checkEvenOdd = computed(() => {
-    if(count.value % 2 == 0) return 'Odd';
-    return 'Even';
+
+    return count.value % 2 === 0 ? 'Even': 'Odd';
   });
   
 
