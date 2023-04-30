@@ -6,6 +6,8 @@
   <h3>{{ count }} - {{ checkEvenOdd }}</h3>
   <button @click="decrement(1)"> - </button>
 
+  <p v-html="htmlType"></p>
+
 </template>
 
 
@@ -15,6 +17,7 @@
   let count = ref(0);
 
   let textType = ref ('built in directives V-Text');
+  let htmlType = ref (`<li> this is a list item </li>`)
   const staticString = 'New Vue JS 3 Course- ';
   let course = reactive({
     courseName: 'Vue 3',
