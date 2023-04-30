@@ -9,6 +9,9 @@
   <button @click="decrement(1)"> - </button>
 
   <p v-html="htmlType"></p>
+  <ul>
+    <li v-for="toDo in toDos"> {{ toDo }} </li>
+  </ul>
 
 </template>
 
@@ -19,6 +22,8 @@
   let count = ref(0);
 
   let showBtn = ref(true);
+
+  let toDos = ref(['Learn Vue 3', 'Learn React', 'Learn Node JS']);
 
   let textType = ref ('built in directives V-show');
   let htmlType = ref (`<li> this is a list item </li>`)
