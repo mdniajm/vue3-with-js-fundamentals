@@ -1,5 +1,7 @@
 <template>
-  <h1>{{ staticString }} <span v-text="textType"></span></h1>
+  <h1 v-show="showBtn">{{ staticString }} <span v-text="textType"></span></h1>
+
+  <button @click="showBtn= !showBtn">Show/Hide</button>
   <h1>{{ course.courseName }}</h1>
   <p @click="mentorName">Course By {{ mentorFullName }}</p>
   <button @click="increment(1)"> + </button>
@@ -16,7 +18,9 @@
   import { ref, reactive, computed, watch } from 'vue';
   let count = ref(0);
 
-  let textType = ref ('built in directives V-Text');
+  let showBtn = ref(true);
+
+  let textType = ref ('built in directives V-show');
   let htmlType = ref (`<li> this is a list item </li>`)
   const staticString = 'New Vue JS 3 Course- ';
   let course = reactive({
