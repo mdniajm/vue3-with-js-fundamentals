@@ -15,8 +15,24 @@
 
   <h1 :class="classBinding">Class Binding</h1>
   <button @click="isRed = !isRed">Red</button>
+  <button @click="isGreen = !isGreen">Green</button>
 
 </template>
+<style>
+  .red {
+    color: red;
+    background-color: red;
+  }
+  .green {
+    color: green;
+    background-color: green;
+  }
+  .blue {
+    color: blue;
+    background-color: blue;
+  }
+
+</style>
 
 
 
