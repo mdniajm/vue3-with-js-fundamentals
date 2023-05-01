@@ -14,6 +14,7 @@
   </ul>
 
   <h1 :class="classBinding">Class Binding</h1>
+  <button @click="isRed = !isRed">Red</button>
 
 </template>
 
@@ -83,83 +84,7 @@
     }
   });
 
-  /* Event handling */
-
-  const clickHandler = () => {
-    console.log('Clicked');
-  }
-
-  /* Event modifiers */
-
-  const clickHandlerWithModifiers = () => {
-    console.log('Clicked with modifiers');
-  }
-
-  /* Event propagation */
-
-  const clickHandlerWithPropagation = () => {
-    console.log('Clicked with propagation');
-  }
-
-  /* Event key modifiers */
-
-  const clickHandlerWithKeyModifiers = () => {
-    console.log('Clicked with key modifiers');
-  }
-
-  /* Event key modifiers */
-
-  const clickHandlerWithMouseModifiers = () => {
-    console.log('Clicked with mouse modifiers');
-  }
-
-  /* Event key modifiers */
-
-  const clickHandlerWithSystemModifiers = () => {
-    console.log('Clicked with system modifiers');
-  }
-
-  /* Event key modifiers */
-
-  const clickHandlerWithCustomModifiers = () => {
-    console.log('Clicked with custom modifiers');
-  }
-
-  /* Event key modifiers */
-
-  const clickHandlerWithCustomModifiers2 = () => {
-    console.log('Clicked with custom modifiers 2');
-  }
-
-  /* Event key modifiers */
-
-  const clickHandlerWithCustomModifiers3 = () => {
-    console.log('Clicked with custom modifiers 3');
-  }
-
-  /* Event key modifiers */
-
-  const clickHandlerWithCustomModifiers4 = () => {
-    console.log('Clicked with custom modifiers 4');
-  }
-
-  /* Event key modifiers */
-
-  const clickHandlerWithCustomModifiers5 = () => {
-    console.log('Clicked with custom modifiers 5');
-  }
-
-  /* Event key modifiers */
-
-  const clickHandlerWithCustomModifiers6 = () => {
-    console.log('Clicked with custom modifiers 6');
-  }
-
-  /* Event key modifiers */
-
-  const clickHandlerWithCustomModifiers7 = () => {
-    console.log('Clicked with custom modifiers 7');
-  }
+ 
 
 
 
