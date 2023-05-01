@@ -13,6 +13,8 @@
     <li v-for="toDo in toDos"> {{ toDo }} </li>
   </ul>
 
+  <h1 :class="classBinding">Class Binding</h1>
+
 </template>
 
 
@@ -53,7 +55,111 @@
     console.log('New Value: ', newValue, 'Old Value: ', oldValue);
   });
   
+ /* Class binding */
 
+  let isRed = ref(true);
+  let isGreen = ref(false);
+  let isBlue = ref(true);
+
+  let classBinding = computed(() => {
+    return {
+      red: isRed.value,
+      green: isGreen.value,
+      blue: isBlue.value,
+    }
+  });
+
+  /* Style binding */
+
+  let isBold = ref(true);
+  let isItalic = ref(false);
+  let isUnderline = ref(true);
+
+  let styleBinding = computed(() => {
+    return {
+      fontWeight: isBold.value ? 'bold' : 'normal',
+      fontStyle: isItalic.value ? 'italic' : 'normal',
+      textDecoration: isUnderline.value ? 'underline' : 'none',
+    }
+  });
+
+  /* Event handling */
+
+  const clickHandler = () => {
+    console.log('Clicked');
+  }
+
+  /* Event modifiers */
+
+  const clickHandlerWithModifiers = () => {
+    console.log('Clicked with modifiers');
+  }
+
+  /* Event propagation */
+
+  const clickHandlerWithPropagation = () => {
+    console.log('Clicked with propagation');
+  }
+
+  /* Event key modifiers */
+
+  const clickHandlerWithKeyModifiers = () => {
+    console.log('Clicked with key modifiers');
+  }
+
+  /* Event key modifiers */
+
+  const clickHandlerWithMouseModifiers = () => {
+    console.log('Clicked with mouse modifiers');
+  }
+
+  /* Event key modifiers */
+
+  const clickHandlerWithSystemModifiers = () => {
+    console.log('Clicked with system modifiers');
+  }
+
+  /* Event key modifiers */
+
+  const clickHandlerWithCustomModifiers = () => {
+    console.log('Clicked with custom modifiers');
+  }
+
+  /* Event key modifiers */
+
+  const clickHandlerWithCustomModifiers2 = () => {
+    console.log('Clicked with custom modifiers 2');
+  }
+
+  /* Event key modifiers */
+
+  const clickHandlerWithCustomModifiers3 = () => {
+    console.log('Clicked with custom modifiers 3');
+  }
+
+  /* Event key modifiers */
+
+  const clickHandlerWithCustomModifiers4 = () => {
+    console.log('Clicked with custom modifiers 4');
+  }
+
+  /* Event key modifiers */
+
+  const clickHandlerWithCustomModifiers5 = () => {
+    console.log('Clicked with custom modifiers 5');
+  }
+
+  /* Event key modifiers */
+
+  const clickHandlerWithCustomModifiers6 = () => {
+    console.log('Clicked with custom modifiers 6');
+  }
+
+  /* Event key modifiers */
+
+  const clickHandlerWithCustomModifiers7 = () => {
+    console.log('Clicked with custom modifiers 7');
+  }
 
 
 
