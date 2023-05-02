@@ -14,6 +14,7 @@
   </ul>
 
   <h1 :class="classBinding">Class Binding</h1>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consectetur dolore voluptatum voluptatem atque consequatur quas est eum, doloribus molestias tempora ea expedita culpa tempore sapiente voluptas distinctio ab dolores!</p>
   <button @click="isRed = !isRed">Red</button>
   <button @click="isGreen = !isGreen">Green</button>
 
