@@ -21,7 +21,7 @@
   <button @click="isRed = !isRed">Red</button>
   <button @click="isGreen = !isGreen">Green</button>
 
-  <a :href=""> </a>
+  <a :href="siteUrl"> </a>
 
 </template>
 <style>
@@ -45,8 +45,8 @@
 <script setup>
   import { ref, reactive, computed, watch } from 'vue';
 
+  let siteUrl = ref('https://www.google.com');
 
-  
   let count = ref(0);
 
 
