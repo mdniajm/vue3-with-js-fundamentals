@@ -15,11 +15,13 @@
 
   <h1 :class="classBinding">Class Binding</h1>
   <p :class="classBinding"
-     :style = {bgGreen}
+     :style = "{bgGreen}" 
   
   >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consectetur dolore voluptatum voluptatem atque consequatur quas est eum, doloribus molestias tempora ea expedita culpa tempore sapiente voluptas distinctio ab dolores!</p>
   <button @click="isRed = !isRed">Red</button>
   <button @click="isGreen = !isGreen">Green</button>
+
+  <a :href=""> </a>
 
 </template>
 <style>
@@ -42,7 +44,12 @@
 
 <script setup>
   import { ref, reactive, computed, watch } from 'vue';
+
+
+  
   let count = ref(0);
+
+
 
   let showBtn = ref(true);
 
