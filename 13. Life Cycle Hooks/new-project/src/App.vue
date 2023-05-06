@@ -7,10 +7,13 @@
 
 
 <script setup>
-  import { ref, reactive, computed, watch } from 'vue';
+  import { mounted } from 'vue';
 
   //lifecycle hook
-  
+
+  mounted() {
+    console.log('mounted');
+  }
 
 
 </script>
