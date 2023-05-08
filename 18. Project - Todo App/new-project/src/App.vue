@@ -1,28 +1,18 @@
 <template>
-  <h1 v-show="showBtn">{{ staticString }} <span v-text="textType"></span></h1>
-
-  <button @click="showBtn= !showBtn">Show/Hide</button>
-  <h1>{{ course.courseName }}</h1>
-  <p @click="mentorName">Course By {{ mentorFullName }}</p>
-  <button @click="increment(1)"> + </button>
-  <h3>{{ count }} - {{ checkEvenOdd }}</h3>
-  <button @click="decrement(1)"> - </button>
-
-  <p v-html="htmlType"></p>
-  <ul>
-    <li v-for="toDo in toDos"> {{ toDo }} </li>
-  </ul>
-
-  <h1 :class="classBinding">Class Binding</h1>
-  <p :class="classBinding"
-     :style = "{bgGreen}" 
-  
-  >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni consectetur dolore voluptatum voluptatem atque consequatur quas est eum, doloribus molestias tempora ea expedita culpa tempore sapiente voluptas distinctio ab dolores!</p>
-  <button @click="isRed = !isRed">Red</button>
-  <button @click="isGreen = !isGreen">Green</button>
-
-  <a :href="siteUrl"> </a>
-
+  <div class="todo-app">
+    <h1>My Todo List</h1>
+    <form @submit.prevent="addTodo">
+      <input type="text" v-model="newTodoText" placeholder="Add new todo item" />
+      <button>Add</button>
+    </form>
+    <ul>
+      <li v-for="(todo, index) in todos" :key="index">
+        <input type="checkbox" v-model="todo.completed" />
+        <span :class="{ completed: todo.completed }">{{ todo.text }}</span>
+        <button @click="deleteTodo(index)">Delete</button>
+      </li>
+    </ul>
+  </div>
 </template>
 <style>
   .red {
