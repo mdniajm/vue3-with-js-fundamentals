@@ -44,19 +44,9 @@ export default {
 }
 </script>
 <style>
-  .red {
-    color: red;
-    background-color: red;
-  }
-  .green {
-    color: green;
-    background-color: green;
-  }
-  .blue {
-    color: blue;
-    background-color: blue;
-  }
-
+.completed {
+  text-decoration: line-through;
+}
 </style>
 
 
