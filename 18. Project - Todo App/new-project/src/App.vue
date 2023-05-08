@@ -14,6 +14,35 @@
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      newTodoText: '',
+      todos: [
+        { text: 'Learn Vue.js', completed: false },
+        { text: 'Build a simple app', completed: true },
+        { text: 'Deploy the app', completed: false }
+      ]
+    }
+  },
+  methods: {
+    addTodo() {
+      if (this.newTodoText) {
+        this.todos.push({
+          text: this.newTodoText,
+          completed: false
+        });
+        this.newTodoText = '';
+      }
+    },
+    deleteTodo(index) {
+      this.todos.splice(index, 1);
+    }
+  }
+}
+</script>
 <style>
   .red {
     color: red;
@@ -32,80 +61,5 @@
 
 
 
-<script setup>
-  import { ref, reactive, computed, watch } from 'vue';
-
-  let siteUrl = ref('https://www.google.com');
-
-  let count = ref(0);
-
-
-
-  let showBtn = ref(true);
-
-  let bgGreen = ref('background-color: green');
-
-  let toDos = ref(['Learn Vue 3', 'Learn React', 'Learn Node JS']);
-
-  let textType = ref ('built in directives V-show');
-  let htmlType = ref (`<li> this is a list item </li>`)
-  const staticString = 'New Vue JS 3 Course- ';
-  let course = reactive({
-    courseName: 'Vue 3',
-    mentorFirstName: 'Md Niaj',
-    mentorLastName: 'Makhdum',
-  })
-  
-  const increment = amount => count.value += amount;
-  const decrement = amount => count.value -= amount;
-  const mentorName = () => course.mentor = "Md. Niaj Makhdum";
-
-  const mentorFullName = computed(() => {
-    return course.mentorFirstName + ' ' + course.mentorLastName;
-  });
-
-  const checkEvenOdd = computed(() => {
-
-    return count.value % 2 === 0 ? 'Even': 'Odd';
-  });
-
-  /* Watch event  */
-
-  watch(count, (newValue, oldValue) => {
-    console.log('New Value: ', newValue, 'Old Value: ', oldValue);
-  });
-  
- /* Class binding */
-
-  let isRed = ref(true);
-  let isGreen = ref(false);
-  let isBlue = ref(true);
-
-  let classBinding = computed(() => {
-    return {
-      red: isRed.value,
-      green: isGreen.value,
-      blue: isBlue.value,
-    }
-  });
-
-  /* Style binding */
-
-  let isBold = ref(true);
-  let isItalic = ref(false);
-  let isUnderline = ref(true);
-
-  let styleBinding = computed(() => {
-    return {
-      fontWeight: isBold.value ? 'bold' : 'normal',
-      fontStyle: isItalic.value ? 'italic' : 'normal',
-      textDecoration: isUnderline.value ? 'underline' : 'none',
-    }
-  });
-
- 
-
-
-
-</script>
+<
 
