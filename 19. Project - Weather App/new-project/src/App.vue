@@ -14,3 +14,31 @@
     </div>
   </div>
 </template>
+
+<script>
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      city: '',
+      weather: null,
+    }
+  },
+  methods: {
+    getWeather() {
+      const API_KEY = 'your_openweathermap_api_key_here';
+      const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=${API_KEY}`;
+      
+      axios.get(API_URL)
+        .then(response => {
+          this.weather = response.data;
+          this.city = '';
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }
+}
+</script>
