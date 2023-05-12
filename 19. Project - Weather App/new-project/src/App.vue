@@ -1,119 +1,146 @@
-<template>
-  <div>
-    <h1>Weather App</h1>
-    <form @submit.prevent="getWeather">
-      <label for="city">Enter City:</label>
-      <input type="text" id="city" v-model="city" required>
-      <button type="submit">Get Weather</button>
-    </form>
-    <div v-if="weather">
-      <h2>{{ city }}</h2>
-      <p>Current temperature: {{ weather.main.temp }} &#8451;</p>
-      <p>Weather description: {{ weather.weather[0].description }}</p>
-      <p>Wind speed: {{ weather.wind.speed }} m/s</p>
-    </div>
-  </div>
-</template>
+<script setup>
+import { useWeatherStore } from './stores/weather';
 
-<script>
-import axios from 'axios';
+const weatherStore = useWeatherStore();
 
-export default {
-  data() {
-    return {
-      city: '',
-      weather: null,
-    }
-  },
-  methods: {
-    getWeather() {
-      const API_KEY = 'your_openweathermap_api_key_here';
-      const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=${API_KEY}`;
-      
-      axios.get(API_URL)
-        .then(response => {
-          this.weather = response.data;
-          this.city = '';
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
-  }
-}
 </script>
 
 <template>
-  <div class="weather-app">
-    <!-- Weather app content -->
+
+<div class="container">
+  <div class="wrap">
+    <!-- Search Box for Location -->
+    <div class="search-box">
+      <input type="text" placeholder="Search..." class="search-bar"
+      v-model="weatherStore.location_query"
+      @keypress="weatherStore.fetchWeather"
+      >
+    </div>
+
+    <!-- Weather Information -->
+    <div class="weather-info" v-if="weatherStore.weather.main !=undefined">
+      <div class="location-box">
+          <div class="location">{{ weatherStore.weather.name }}, {{ weatherStore.weather.sys.country }}</div>
+          <div class="date">{{ new Date().toLocaleString() }}</div>
+      </div>
+
+      <div class="weather-box">
+        <div class="temp">{{ weatherStore.weather.main.temp }} °c</div>
+        <div class="weather">{{ weatherStore.weather.weather[0].main }}</div>
+        <div class="icon">
+          <img :src="`http://openweathermap.org/img/wn/${weatherStore.weather.weather[0].icon}@2x.png`" alt="">
+        </div>
+        <div class="other-info">
+          <span class="pressure">Pressure: {{ weatherStore.weather.main.pressure }} mb</span>
+          <span class="pressure">Humidity: {{ weatherStore.weather.main.humidity }} %</span>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
 </template>
 
-<style>
-.weather-app {
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 500px;
-  background-color: #f5f5f5;
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap'); 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+  background-image: url("./assets/default.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: 0.4s;
+  width: 375px;
+  margin: 0 auto;
+  border-radius: 25px;
+  margin-top: 50px;
+  box-shadow: 0px 0px 30px #00000065;
+}
+.wrap{
+  height: 700px;
+  padding: 25px;
+  border-radius: 25px;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.4));
+}
+
+.search-box .search-bar{
+  display: block;
+  width: 100%;
+  padding: 15px;
+  color: #313131;
+  font-size: 20px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.25);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+}
+
+.search-box .search-bar:focus{
+  box-shadow: 0px 0px 16px rgba(0,0,0,0.25);
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.location-box .location{
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.location-box .date{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
   text-align: center;
 }
 
-h1 {
-  margin-top: 0;
+.weather-box{
+  text-align: center;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-label {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-}
-
-input[type="text"] {
-  padding: 10px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
-}
-
-button[type="submit"] {
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
+.weather-box .temp{
+  display: inline-block;
+  padding: 10px 25px;
   color: #fff;
-  cursor: pointer;
+  font-size: 100px;
+  font-weight: 900;
+  text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+  background-color: rgba(255,255,255,0.25);
+  border-radius: 16px;
+  margin: 30px 0;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+  font-style: italic;
 }
 
-button[type="submit"]:hover {
-  background-color: #0069d9;
+.weather-box .weather{
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  font-style: italic;
+  text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
 }
 
-h2 {
-  margin-top: 0;
+.other-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-p {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+.pressure{
+  color: #fff;
+  font-size: 18px;
 }
 
-.weather-data {
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  text-align: left;
-}
 </style>
