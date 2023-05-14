@@ -39,6 +39,10 @@ const weatherStore = useWeatherStore();
   </div>
 </div>
 
+<!-- weather region -->
+
+
+
 </template>
 
 <style scoped>
