@@ -3,7 +3,12 @@ import { useWeatherStore } from './stores/weather';
 
 const weatherStore = useWeatherStore();
 
+const fetchWeather = async () => {
+  await weatherStore.fetchWeather();
+}
+
 </script>
+
 
 <template>
 
