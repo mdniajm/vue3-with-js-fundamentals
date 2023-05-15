@@ -7,10 +7,14 @@ const fetchWeather = async () => {
   await weatherStore.fetchWeather();
 }
 
+fetchWeather();
+
 </script>
 
 
 <template>
+<!-- weather region -->
+
 
 <div class="container">
   <div class="wrap">
