@@ -47,6 +47,12 @@ fetchWeather();
     </div>
   </div>
 </div>
+ 
+ <div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illum impedit
+    deserunt provident dolores necessitatibus sit sint nesciunt, praesentium accusantium maxime aliquid dicta eius corporis temporibus quo dolorum deleniti est.
+    </p>
+ </div>
 
 <!-- weather region -->
 
